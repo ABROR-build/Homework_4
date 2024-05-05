@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>DETAILS</title>
 </head>
 <body>
-$END$
+     <img src="{{ article.image.url }}">
+    <h2>{{ article.title }}</h2><br>
+    <p>{{ article.summary }}</p><br><hr>
+    <p>{{ article.article }}</p>
+
+    <p>
+        <a href="{% url 'edit_article' article.pk %}">
+            Edit
+        </a>
+    </p>
+
+    <p>
+        <a href="{% url 'delete_article' article.pk %}">
+            Delete
+        </a>
+    </p>
+
 </body>
 </html>

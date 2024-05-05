@@ -1,10 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Topics</title>
 </head>
-<body>
-$END$
+
+    <body>
+    <h1>Topics</h1>
+    {% for topic in topics %}
+        <p>
+            <a href="{% url 'headlines' topic.pk %}">
+                {{ topic.topic_name }}
+            </a>
+        </p>
+    {% endfor %}
+
+    <a href="{% url 'new_article' %}">
+        <button>
+            Add new
+        </button>
+    </a>
+
 </body>
+
 </html>

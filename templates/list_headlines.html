@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Headlines</title>
 </head>
 <body>
-$END$
+{% for headline in headlines %}
+    <h1>HEADLINES</h1> <p> {{ headline.topic_name }}</p>
+    <h3>
+        <a href="{% url 'article_details' headline.pk %}">
+            {{ headline.title }}
+        </a>
+    </h3><br>
+    <p>{{ headline.summary }}</p><hr><br><br>
+
+
+{% endfor %}
+
+
 </body>
 </html>
